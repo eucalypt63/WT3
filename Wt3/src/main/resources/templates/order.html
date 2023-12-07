@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <style>
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .page-container {
+      text-align: center;
+      width: 40%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+     .page-main {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <title th:text="${title}"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<header th:insert="blocks/header :: header" ></header>
+<body>
+
+<div class="main-container">
+  <div class="page-background"></div>
+  <div class="page-container">
+    <div class="page has-right-rail">
+      <main class="page-main">
+        <h1>
+          <span id="lang-enter">Оформление заказа</span>
+        </h1>
+        <form method="post">
+          <div>
+            <label for="address">Адрес</label><br>
+            <input type="text" id="address" name="address">
+          </div>
+          <div>
+            <label for="number">Номер телефона</label><br>
+            <input type="text" id="number" name="number">
+          </div>
+          <div>
+            <label for="card">Номер карты</label><br>
+            <input type="text" id="card" name="card">
+          </div>
+          <br>
+          <button type="submit" class="btn btn-success">Оформить</button>
+        </form>
+      </main>
+    </div>
+  </div>
+</div>
+<header th:insert="blocks/footer :: footer" class="mt-auto"></header>
+</body>
+</html>
+
